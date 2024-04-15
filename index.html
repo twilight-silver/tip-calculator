@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <style>
+      *{
+        font-family: "Space Mono";
+      }
+      .back-ground-color{
+        background-color: hsl(185, 41%, 84%);
+      }
+      .edit1{
+        margin-top: 5.6px;
+        margin-left: 5px;
+      }
+      .txt{
+        width: 80%;
+        background-color: hsl(189, 41%, 92%);
+        border: none;
+        outline: none;
+      }
+      .dark-cyan{
+        background-color: hsl(183, 100%, 15%);
+      }
+      .gray{
+        color: hsl(184, 14%, 56%);
+      }
+      .bill2 > input::placeholder{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+      .bill2 > input{
+        color: hsl(183, 100%, 15%);
+        font-weight: bold;
+      }
+      .dark-gray{
+        background-color: hsl(183, 83%, 9%);
+        border: none;
+        outline: none;
+      }
+      .edit2{
+        font-size: 14px;
+        color: hsl(186, 14%, 43%);
+        font-weight: 700;
+      }
+      .bill2 > button:hover{
+        background-color: hsl(182, 100%, 65%);
+        color: black;
+      }
+      .bill2 > button{
+        border: none;
+        outline: none;
+      }
+      .edit3{
+        border: none;
+        outline: none;
+      }
+      .edit4{
+        font-size: 32px;
+        color: hsl(172, 67%, 45%);
+        font-weight: bold;
+      }
+      .main{
+        width: 50vw;
+        border-radius: 15px;
+      }
+      .left-c, .right-c{
+        width: 50%;
+      }
+      .right-c{
+        border-radius: 15px;
+      }
+      .nubt{
+        width: 25%;
+        padding: .7rem;
+        font-size: larger;
+      }
+      .submit > button{
+        padding: 1rem;
+        color: hsl(183, 100%, 15%);
+        background-color: hsl(172, 67%, 45%);
+        font-weight: bold;
+      }
+
+      @media (max-width: 480px){
+        .main{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 100vw;
+          padding: none;
+          margin: none;
+        }
+
+        .left-c , .right-c{
+          width: 90%;
+          padding: 1rem;
+        }
+
+        .txt{
+          width: 100%;
+        }
+
+        .nubt{
+          width: 175px;
+          font-weight: bold;
+        }
+        .txt{
+          height: 2.5rem;
+        }
+        .edit1{
+          margin-top: 10.5px;
+        }
+      }
+
+    </style>
+  </head>
+  <body class="back-ground-color">
+    <img src="./images/logo.svg" alt="logo" class="d-block mx-auto mt-5" />
+    <div class=" main bg-white mt-5 row mx-auto p-2 justify-content-center">
+      <div class="left-c  col-5 mx-auto">
+        <div class="bill mb-3">
+          <label for="bill" class="text-capitalize d-block mb-1 edit2">Bill</label>
+          <i><img src="./images/icon-dollar.svg" alt="dollar" class="position-absolute edit1"/></i>
+          <input type="number" placeholder="0" class="text-end txt rounded p-1"/>
+        </div>
+        <div class="bill2 mb-3">
+          <label for="percent" class="text-capitalize d-block mb-1 edit2">Select Tip %</label>
+          <button class=" nubt  rounded  m-1 dark-cyan text-white">5%</button>
+          <button class=" nubt  rounded  m-1 dark-cyan text-white">10%</button>
+          <button class=" nubt  rounded  m-1 dark-cyan text-white">15%</button>
+          <button class=" nubt  rounded  m-1 dark-cyan text-white">25%</button>
+          <button class=" nubt  rounded  m-1 dark-cyan text-white">50%</button>
+          <input  class=" nubt edit3 rounded m-1 dark-cyan gray text-white"type="number" placeholder="Custom" />
+        </div>
+        <div class="people mb-3">
+          <label for="bill3" class="text-capitalize d-block mb-1 edit2">Percent of Persons</label>
+          <i><img src="./images/icon-person.svg" alt="person" class="position-absolute edit1 "/></i>
+          <input type="number" placeholder="0" class="text-end txt rounded p-1"/>
+        </div>
+      </div>
+      <div class="right-c col-5 dark-cyan text-white mx-auto justify-content-center align-items-center">
+        <div class="tip-container row justify-content-center p-2 container-fluid">
+          <div class="tip-word col-8 ">
+            <p class="amount">Tip Amount <span class="d-block">/percent</span></p>
+          </div>
+          <div class="0.0 col-4 mt-2 ">
+            <p class="number edit4">$0.00</p>
+          </div>
+        </div>
+        <div class="tip-container row justify-content-center p-2 container-fluid">
+          <div class="tip-word col-8">
+            <p class="amount">Tip Amount <span class="d-block">/percent</span></p>
+          </div>
+          <div class="0.0 col-4 mt-2">
+            <p class="number edit4">$0.00</p>
+          </div>
+        </div>
+        <div class="submit mx-auto">
+          <button class="mx-auto d-block mt-5 mb-2 dark-gray p-2 rounded w-50 text-uppercase">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="attribution text-center justify-content-center mt-5">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
